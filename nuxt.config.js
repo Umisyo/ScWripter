@@ -43,6 +43,7 @@ export default {
   */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/device'
   ],
   /*
   ** vuetify module configuration
