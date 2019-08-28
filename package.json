@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "cargo build --manifest-path ./src/assets/text_formatter/Cargo.toml --target wasm32-unknown-unknown && wasm-bindgen ./src/assets/text_formatter/target/wasm32-unknown-unknown/debug/text_formatter.wasm --out-dir ./src/assets/text_formatter/out && nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "cargo build --manifest-path ./src/assets/text_formatter/Cargo.toml --target wasm32-unknown-unknown && wasm-bindgen ./src/assets/text_formatter/target/wasm32-unknown-unknown/debug/text_formatter.wasm --out-dir ./src/assets/text_formatter/out && nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/device": "^1.2.3",
