@@ -1,0 +1,1 @@
+/Users/s_kusunoki/project/other/ScWripter/src/assets/text_formatter/target/wasm32-unknown-unknown/debug/text_formatter.wasm: /Users/s_kusunoki/project/other/ScWripter/src/assets/text_formatter/src/lib.rs
