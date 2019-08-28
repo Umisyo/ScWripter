@@ -90,4 +90,4 @@ sw.*
 # Vim swap files
 *.swp
 
-./src/assets/text_formatter/target
+target
