@@ -6,7 +6,11 @@
             <v-textarea v-model="text" @input="format_text" counter auto-grow/>
         </div>
         <div class="mobile_textarea" v-else>
-            <v-textarea v-model="text" @input="format_text" counter height="100vh"/>
+            <v-btn text @click="show_preview">Preview</v-btn>
+            <div class="mobile_preview" v-if="isShowPreview">
+                <p v-for="(Paragraph, index) in text_array" :key="index"><br v-if="Paragraph === ''">{{ Paragraph }}</p>
+            </div>
+            <v-textarea v-else v-model="text" @input="format_text" counter />
         </div>
         <div class="text_preview" v-if="!$device.isMobile">
             <p v-for="(Paragraph, index) in text_array" :key="index"><br v-if="Paragraph === ''">{{ Paragraph }}</p>
@@ -23,7 +27,8 @@ export default {
         return {
             text: '',
             formatted_text: '',
-            text_array: []
+            text_array: [],
+            isShowPreview: false
         }
     },
     methods: {
@@ -34,6 +39,9 @@ export default {
         async call_formatter() {
             const res = await wasm_text_formatter.then(wasm_text_formatter => wasm_text_formatter.text_parser(this.text))
             this.text_array = res.split('\n')
+        },
+        show_preview() {
+            this.isShowPreview = !this.isShowPreview
         }
     }
 }
