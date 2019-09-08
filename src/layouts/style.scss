@@ -1,0 +1,19 @@
+@import '~/assets/style/_variables';
+
+.header {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    border: 1px solid #000;
+
+    &__logo {
+        margin-right: auto;
+    }
+    &__user_info {
+        a {
+            text-decoration: none;
+        }
+    }
+}
